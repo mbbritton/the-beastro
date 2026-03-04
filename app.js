@@ -39,11 +39,9 @@ function buildPetCards() {
 
     // Photo placeholder — swap in real image by placing a file at:
     //   public/images/pets/${pet.id}.jpg  (or .png, .webp)
-    // The <img> below will automatically load it if found.
     const imgHtml = `
-      <div class="pet-placeholder" style="background:${pet.color}20; border-bottom: 2px solid ${pet.color};">
-        <span>${pet.emoji}</span>
-        <span class="pet-placeholder-label">Photo coming soon</span>
+      <div class="pet-card-img" id="img-${pet.id}">
+        <img src="public/images/pets/${pet.id}.jpg" alt="${pet.name}" onerror="this.parentElement.innerHTML = '<div class=\\'pet-placeholder\\' style=\\'background:${pet.color}20; border-bottom: 2px solid ${pet.color};\\' ><span>${pet.emoji}</span><span class=\\'pet-placeholder-label\\'>Photo coming soon</span></div>';" />
       </div>`;
 
     card.innerHTML = `
