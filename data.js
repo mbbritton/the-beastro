@@ -156,5 +156,19 @@ const PETS = [
       name: "The Furniture Rearrangement",
       description: "A deconstructed salad served on a plate that's been rearranged three times during plating — mustard greens, bell pepper strips, and apple slices scattered artfully (chaotically). Comes with a small ceramic tortoise figurine that tips over dramatically when you touch the plate. Pairs well with a dramatic hiss of approval."
     }
+  },
+  {
+    id: "lula",
+    name: "Lula",
+    owner: "Coworker",
+    species: "dog",
+    emoji: "🐕",
+    color: "#8B4513", // saddle brown
+    traits: ["Rottweiler", "selective eater", "feather-phobic"],
+    bio: "A 135 lb Rottweiler with a surprisingly refined palate. Gets along swimmingly with cats and goats, but has strong opinions about other animals. Will happily devour garbage and poop, but draws a firm line at eggs and shellfish — absolutely not happening. Her one true fear? Feathers. The mere sight sends her into a panic.",
+    creation: {
+      name: "The Selective Feast",
+      description: "A deconstructed charcuterie board featuring garbage-inspired delicacies and artfully arranged poop-shaped chocolates, conspicuously missing any eggs or shellfish. Garnished with cat and goat figurines for moral support. Served on a plate with a protective dome to shield from any stray feathers. A small fondant Rottweiler guards the perimeter with dignified intensity."
+    }
   }
 ];
