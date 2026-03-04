@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Beastro — Every pet has a flavor.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">🐾 The Beastro</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#questionnaire">Questionnaire</a></li>
+        <li><a href="#gallery">Pet Gallery</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#questionnaire" class="nav-cta">Reserve a Table</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" onclick="toggleNav()">☰</button>
+    </div>
+    <ul class="nav-mobile" id="navMobile">
+      <li><a href="#about" onclick="toggleNav()">About</a></li>
+      <li><a href="#questionnaire" onclick="toggleNav()">Questionnaire</a></li>
+      <li><a href="#gallery" onclick="toggleNav()">Pet Gallery</a></li>
+      <li><a href="#menu" onclick="toggleNav()">Menu</a></li>
+      <li><a href="#questionnaire" onclick="toggleNav()" class="nav-cta">Reserve a Table</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🐾 Pets Only. Seriously.</div>
+      <h1 class="hero-title">The Beastro</h1>
+      <p class="hero-tagline">Every pet has a flavor. Let's find yours.</p>
+      <p class="hero-sub">A one-of-a-kind dining experience where our chef studies your pet's soul and crafts a dish worthy of their entire personality.</p>
+      <a href="#questionnaire" class="btn btn-primary">Tell Us About Your Pet →</a>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-bubbles">
+        <span class="bubble b1">🐱</span>
+        <span class="bubble b2">🐶</span>
+        <span class="bubble b3">🍽️</span>
+        <span class="bubble b4">🐾</span>
+        <span class="bubble b5">✨</span>
+        <span class="bubble b6">🐱</span>
+        <span class="bubble b7">🌿</span>
+        <span class="bubble b8">🐾</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about section">
+    <div class="container">
+      <span class="eyebrow">The Concept</span>
+      <h2 class="section-title">Fine dining. <em>Reimagined</em> for pet people.</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">📋</div>
+          <h3>Step 1: The Questionnaire</h3>
+          <p>When you arrive, you'll fill out a short (but very important) questionnaire about your pet. Their quirks, their obsessions, their most chaotic moments.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">👨‍🍳</div>
+          <h3>Step 2: The Chef Studies</h3>
+          <p>Our chef reviews your answers with great seriousness and theatrical gravity. Pacing may occur. Muttering is expected.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🍽️</div>
+          <h3>Step 3: The Creation</h3>
+          <p>A dish or drink arrives at your table — crafted to capture the essence of your pet. Whimsical. Delicious. Inexplicably accurate.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🐾</div>
+          <h3>The Fine Print</h3>
+          <p>No two dishes are ever the same. Your pet is unique. Your plate should be too. Pets are welcome in spirit only — health codes remain, unfortunately, non-negotiable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTIONNAIRE -->
+  <section id="questionnaire" class="questionnaire section">
+    <div class="container container-narrow">
+      <span class="eyebrow">Reserve Your Table</span>
+      <h2 class="section-title">Tell Us About Your Pet</h2>
+      <p class="section-sub">The more detail you give, the more inspired the chef becomes. Don't hold back.</p>
+
+      <form class="q-form" id="qForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label for="ownerName">Your Name</label>
+          <input type="text" id="ownerName" placeholder="e.g. Mackenzie" required />
+        </div>
+        <div class="form-group">
+          <label for="petName">Your Pet's Name</label>
+          <input type="text" id="petName" placeholder="e.g. Gibson" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="species">Species</label>
+            <select id="species" required>
+              <option value="" disabled selected>Choose one</option>
+              <option>Cat</option>
+              <option>Dog</option>
+              <option>Bird</option>
+              <option>Rabbit</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="breed">Breed / Description</label>
+            <input type="text" id="breed" placeholder="e.g. Pitbull, tortoiseshell, mystery mix" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="personality">Describe their personality in 3 words</label>
+          <input type="text" id="personality" placeholder="e.g. dramatic, sleepy, chaotic" required />
+        </div>
+        <div class="form-group">
+          <label for="quirks">Their most notable quirk or obsession</label>
+          <textarea id="quirks" rows="3" placeholder="e.g. Brings a toy to show us every time we come home. Splays flat like a frog when relaxing. Gets scared when anyone sneezes." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="story">One story that perfectly captures them <span class="optional">(optional but encouraged)</span></label>
+          <textarea id="story" rows="3" placeholder="e.g. She was found at a gas station and is technically 'feral' but cuddles more than any cat I've ever had."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="partySize">Party size <span class="optional">(humans only — again, health codes)</span></label>
+          <select id="partySize">
+            <option>1</option>
+            <option selected>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Submit to the Chef 🍽️</button>
+      </form>
+
+      <!-- Success state -->
+      <div class="q-success" id="qSuccess">
+        <div class="success-icon">👨‍🍳</div>
+        <h3>The chef has received your submission.</h3>
+        <p>They are currently pacing the kitchen and muttering to themselves. This is a good sign.</p>
+        <p class="success-sub">Your table will be ready shortly. Please do not rush the chef.</p>
+        <button class="btn btn-outline" onclick="resetForm()">Submit Another Pet</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PET GALLERY -->
+  <section id="gallery" class="gallery section">
+    <div class="container">
+      <span class="eyebrow">The Regulars</span>
+      <h2 class="section-title">Meet the inspiration</h2>
+      <p class="section-sub">A sample of the creatures whose personalities have challenged and delighted our chef. Each one inspires a completely unique creation.</p>
+
+      <div class="pet-grid" id="petGrid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="menu-section section">
+    <div class="container">
+      <span class="eyebrow">The Menu</span>
+      <h2 class="section-title">There is no menu.</h2>
+      <p class="section-sub">Everything here is made to order — made for <em>your</em> pet. But here's how it works:</p>
+
+      <div class="menu-categories">
+        <div class="menu-cat">
+          <div class="menu-cat-icon">🥂</div>
+          <h3>Cocktails & Mocktails</h3>
+          <p>Flavor profiles drawn from your pet's personality. Chaotic pets get complex layers. Calm pets get something clean and elegant. Cats who steal Twizzlers get something red and unapologetically sweet.</p>
+        </div>
+        <div class="menu-cat">
+          <div class="menu-cat-icon">🧀</div>
+          <h3>Small Plates & Boards</h3>
+          <p>Charcuterie, tasting plates, and shareable bites — arranged and themed after your pet's vibe. Expect surprising garnishes. Expect the chef to take it very seriously.</p>
+        </div>
+        <div class="menu-cat">
+          <div class="menu-cat-icon">🍮</div>
+          <h3>Sweets & Desserts</h3>
+          <p>For the sweet-natured. For the ones who nap in warm spots. For the ones who are, objectively, someone's little baby.</p>
+        </div>
+        <div class="menu-cat">
+          <div class="menu-cat-icon">🍳</div>
+          <h3>Mains</h3>
+          <p>Full plates for the most complex pets. Usually reserved for dogs who do the sploot, cats with multiple documented nicknames, or any animal that has inspired genuine concern in a veterinarian.</p>
+        </div>
+      </div>
+
+      <div class="menu-note">
+        <p>🐾 <strong>Pricing:</strong> Your creation is priced based on ingredient complexity and how long the chef stares out the window thinking about your pet. Typically $14–$32.</p>
+        <p>🐾 <strong>Dietary restrictions:</strong> Please note yours in the questionnaire. The chef will accommodate. The chef will not, however, be making anything for the pets themselves. They asked.</p>
+        <p>🐾 <strong>Reservations:</strong> Required. Use the questionnaire above. Walk-ins are accepted only if your pet's story is sufficiently compelling.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">🐾 The Beastro</div>
+      <p class="footer-tagline">Every pet has a flavor. Let's find yours.</p>
+      <p class="footer-fine">No actual pets were harmed in the making of this menu. No actual pets are allowed inside either. We're very sorry about both of these things.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
