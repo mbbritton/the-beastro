@@ -11,7 +11,7 @@ const PETS = [
     emoji: "🐱",
     color: "#C9B8F0", // lavender
     traits: ["feral (in spirit)", "trot-obsessed", "secret cuddler"],
-    bio: "Found at a gas station and technically 'feral,' Tortie has chosen violence against Twizzlers and chosen love against everyone's expectations. Trots around the house like she's very busy. Gives head kisses like she invented them.",
+    bio: "Found at a gas station and technically 'feral,' Tortie has chosen violence against Twizzlers and chosen love against everyone's expectations. Trots around the house like she's very busy. Demands to be kissed on the head — and she will not take no for an answer.",
     creation: {
       name: "The Gas Station Find",
       description: "A spicy-sweet tortilla wrap with surprise fillings — you never know exactly what's inside until you're already committed. Tied with a red candy-stripe ribbon and served with a side of unexpected warmth."
@@ -53,7 +53,7 @@ const PETS = [
     emoji: "💜",
     color: "#EDE6FF", // lavender light
     traits: ["Texas transplant", "emerging from her shell", "long-haired"],
-    bio: "A long-haired grey cat who made the big move from Texas and is slowly, cautiously deciding that maybe this is fine. Doesn't hide as much as she used to. Occasionally gets hairballs. Texas does that to people.",
+    bio: "A long-haired grey cat who made the big move from Texas and is slowly, cautiously deciding that maybe this is fine. Doesn't hide as much as she used to. Has also become quite the snuggle bug at bedtime — she crams herself between her humans and will lean right into them if they dare move away. Occasionally gets hairballs. Texas does that to people.",
     creation: {
       name: "The Texas Transplant",
       description: "A lavender-grey cotton candy cloud served over a warm honey biscuit. No hiding under the plate. Slightly more relaxed than it used to be. Dusted with a touch of something that could be described as 'not hairball, but close.'"
