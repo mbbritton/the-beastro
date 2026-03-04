@@ -6,7 +6,7 @@ const PETS = [
   {
     id: "tortie",
     name: "Tortie",
-    owner: "Coworker",
+    owner: "Mackenzie",
     species: "cat",
     emoji: "🐱",
     color: "#C9B8F0", // lavender
@@ -20,7 +20,7 @@ const PETS = [
   {
     id: "olive",
     name: "Olive",
-    owner: "Coworker",
+    owner: "Mackenzie",
     species: "cat",
     emoji: "🫒",
     color: "#A8E6CF", // mint
@@ -34,7 +34,7 @@ const PETS = [
   {
     id: "luna",
     name: "Luna",
-    owner: "Coworker",
+    owner: "Matt",
     species: "cat",
     emoji: "🌙",
     color: "#FFE066", // yellow
@@ -48,7 +48,7 @@ const PETS = [
   {
     id: "violet",
     name: "Violet",
-    owner: "Coworker",
+    owner: "Geoff",
     species: "cat",
     emoji: "💜",
     color: "#EDE6FF", // lavender light
@@ -62,7 +62,7 @@ const PETS = [
   {
     id: "indy",
     name: "Indy",
-    owner: "Coworker",
+    owner: "Mike",
     species: "dog",
     emoji: "🏔️",
     color: "#A8E6CF", // mint
@@ -76,7 +76,7 @@ const PETS = [
   {
     id: "koda",
     name: "Koda",
-    owner: "Coworker",
+    owner: "Bruce",
     species: "dog",
     emoji: "✈️",
     color: "#FFB347", // peach
@@ -90,7 +90,7 @@ const PETS = [
   {
     id: "lemon",
     name: "Lemon",
-    owner: "Coworker",
+    owner: "Savannah",
     species: "cat",
     emoji: "🍋",
     color: "#FFE066", // yellow
@@ -104,7 +104,7 @@ const PETS = [
   {
     id: "kevin",
     name: "Kevin",
-    owner: "Coworker",
+    owner: "Savannah",
     species: "dog",
     emoji: "🐕",
     color: "#FFE8E4", // coral light
@@ -118,7 +118,7 @@ const PETS = [
   {
     id: "gibson",
     name: "Gibson",
-    owner: "Coworker",
+    owner: "Jena",
     species: "dog",
     emoji: "🐸",
     color: "#A8E6CF", // mint
@@ -132,7 +132,7 @@ const PETS = [
   {
     id: "kitkat",
     name: "KitKat",
-    owner: "Coworker",
+    owner: "Courtney",
     species: "cat",
     emoji: "🦇",
     color: "#C9B8F0", // lavender
@@ -146,7 +146,7 @@ const PETS = [
   {
     id: "dozer",
     name: "Dozer",
-    owner: "Coworker",
+    owner: "Kaycie",
     species: "tortoise",
     emoji: "🐢",
     color: "#A8D5BA", // sage green
@@ -160,7 +160,7 @@ const PETS = [
   {
     id: "lula",
     name: "Lula",
-    owner: "Coworker",
+    owner: "Erin",
     species: "dog",
     emoji: "🐕",
     color: "#8B4513", // saddle brown
