@@ -48,7 +48,7 @@ function buildPetCards() {
       ${imgHtml}
       <div class="pet-card-body">
         <div class="pet-name">${pet.name}</div>
-        <div class="pet-owner">Owner's pet</div>
+        <div class="pet-owner">${pet.owner}'s pet</div>
         <div class="pet-traits">${tagsHtml}</div>
         <p class="pet-bio">${pet.bio}</p>
         <div class="chef-creation">
