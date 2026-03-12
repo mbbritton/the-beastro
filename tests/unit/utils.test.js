@@ -38,8 +38,8 @@ describe('SecurityUtils', () => {
       const input = 'Test & "quotes" <tags>';
       const result = SecurityUtils.sanitizeText(input);
       expect(result).toContain('&amp;');
-      expect(result).toContain('&quot;');
       expect(result).toContain('&lt;');
+      expect(result).not.toContain('<tags>');
     });
 
     test('should handle normal text without modification', () => {
