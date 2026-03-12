@@ -6,11 +6,13 @@ test.describe('Navigation', () => {
   });
 
   test('should display the main navigation', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
     await expect(page.locator('.nav-logo')).toContainText('The Beastro');
     await expect(page.locator('.nav-links')).toBeVisible();
   });
 
   test('should navigate to sections via nav links', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
     await page.click('a[href="#about"]');
     await expect(page.locator('#about')).toBeInViewport();
 
