@@ -234,9 +234,8 @@ function initializeEventListeners() {
   }
 
   // Reset form button
-  const resetBtn = document.querySelector('[onclick="resetForm()"]');
+  const resetBtn = document.querySelector("#qSuccess button");
   if (resetBtn) {
-    resetBtn.removeAttribute("onclick");
     resetBtn.addEventListener("click", resetForm);
   }
 

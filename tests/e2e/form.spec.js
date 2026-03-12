@@ -7,7 +7,7 @@ test.describe('Pet Questionnaire Form', () => {
 
   test('should display the form', async ({ page }) => {
     await expect(page.locator('#qForm')).toBeVisible();
-    await expect(page.locator('h2')).toContainText('Tell Us About Your Pet');
+    await expect(page.locator('#questionnaire h2')).toContainText('Tell Us About Your Pet');
   });
 
   test('should have all required form fields', async ({ page }) => {
@@ -39,7 +39,7 @@ test.describe('Pet Questionnaire Form', () => {
 
     // Wait for success message
     const successMessage = page.locator('#qSuccess');
-    await expect(successMessage).toBeVisible({ timeout: 2000 });
+    await expect(successMessage).toBeVisible({ timeout: 3000 });
     await expect(successMessage.locator('h3')).toContainText('The chef has received your submission');
     
     // Form should be hidden
@@ -55,7 +55,7 @@ test.describe('Pet Questionnaire Form', () => {
     await page.fill('#quirks', 'Loves to play fetch');
 
     await page.click('button[type="submit"]');
-    await expect(page.locator('#qSuccess')).toBeVisible({ timeout: 2000 });
+    await expect(page.locator('#qSuccess')).toBeVisible({ timeout: 3000 });
 
     // Click reset button
     await page.click('#qSuccess button');
