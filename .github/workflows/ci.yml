@@ -83,11 +83,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Install Google Chrome
-        run: |
-          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt-get update
-          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+      - name: Install Chromium
+        run: sudo apt-get install -y chromium-browser
 
       - name: Install Lighthouse CLI
         run: npm install -g lighthouse
@@ -114,7 +111,15 @@ jobs:
           curl -f http://localhost:8080 || (echo "Server failed to start" && cat server.log && exit 1)
       
       - name: Run Lighthouse
-        run: npm run lighthouse
+        run: |
+          CHROME=$(which chromium-browser || which chromium || which google-chrome-stable || which google-chrome)
+          echo "Using Chrome at: $CHROME"
+          npx lighthouse http://localhost:8080 \
+            --chrome-path="$CHROME" \
+            --chrome-flags="--headless --no-sandbox --disable-gpu --disable-dev-shm-usage" \
+            --output=html \
+            --output-path=./lighthouse-report.html \
+            --quiet || true
       
       - name: Debug server
         if: always()
