@@ -12,7 +12,7 @@
     "build": "npm run build:css && npm run build:js",
     "build:css": "node scripts/build-css.js",
     "build:js": "terser app.js -o dist/app.min.js -c -m && terser data.js -o dist/data.min.js -c -m",
-    "lighthouse": "lighthouse http://localhost:8080 --output=html --output-path=./lighthouse-report.html",
+    "lighthouse": "npx lighthouse http://localhost:8080 --output=html --output-path=./lighthouse-report.html",
     "serve": "python3 -m http.server 8080",
     "dev": "npm run serve"
   },
@@ -32,7 +32,8 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^30.3.0",
     "postcss": "^8.4.47",
-    "terser": "^5.27.0"
+    "terser": "^5.27.0",
+    "lighthouse": "^11.7.0"
   },
   "jest": {
     "testEnvironment": "jsdom",
