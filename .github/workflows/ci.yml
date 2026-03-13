@@ -85,29 +85,38 @@ jobs:
       
       - name: Start server
         run: |
-          python3 -m http.server 8080 --bind 0.0.0.0 > server.log 2>&1 &
-          echo $! > server.pid
+          npm run serve > server.log 2>&1 &
+          SERVER_PID=$!
+          echo $SERVER_PID > server.pid
+          echo "Server started with PID: $SERVER_PID"
+          sleep 10
       
       - name: Wait for server
         run: |
-          echo "Waiting for server to start..."
-          sleep 5
-          ps aux | grep python || echo "No Python process found"
-          cat server.log || echo "No server log found"
-          npx wait-on http://localhost:8080 --timeout 30000
-          echo "Server is ready"
-          curl -f http://localhost:8080 || exit 1
+          echo "Waiting for server to be ready..."
+          for i in {1..30}; do
+            if curl -f http://localhost:8080 >/dev/null 2>&1; then
+              echo "Server is ready!"
+              break
+            fi
+            echo "Attempt $i: Server not ready, waiting..."
+            sleep 2
+          done
+          curl -f http://localhost:8080 || (echo "Server failed to start" && cat server.log && exit 1)
       
       - name: Run Lighthouse
         run: npm run lighthouse
       
-      - name: Debug server logs
+      - name: Debug server
         if: always()
         run: |
           echo "Server logs:"
           cat server.log || echo "No server log found"
           echo "Server process:"
           ps aux | grep python || echo "No Python process found"
+          echo "Netstat for port 8080:"
+          netstat -tulpn | grep 8080 || echo "Port 8080 not found"
+          curl -v http://localhost:8080 || echo "Server not responding"
       
       - name: Upload Lighthouse report
         uses: actions/upload-artifact@v4
