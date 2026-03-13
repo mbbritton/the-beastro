@@ -84,15 +84,30 @@ jobs:
         run: npm ci
       
       - name: Start server
-        run: npm run serve &
-        env:
-          CI: true
+        run: |
+          python3 -m http.server 8080 --bind 0.0.0.0 > server.log 2>&1 &
+          echo $! > server.pid
       
       - name: Wait for server
-        run: npx wait-on http://localhost:8080
+        run: |
+          echo "Waiting for server to start..."
+          sleep 5
+          ps aux | grep python || echo "No Python process found"
+          cat server.log || echo "No server log found"
+          npx wait-on http://localhost:8080 --timeout 30000
+          echo "Server is ready"
+          curl -f http://localhost:8080 || exit 1
       
       - name: Run Lighthouse
         run: npm run lighthouse
+      
+      - name: Debug server logs
+        if: always()
+        run: |
+          echo "Server logs:"
+          cat server.log || echo "No server log found"
+          echo "Server process:"
+          ps aux | grep python || echo "No Python process found"
       
       - name: Upload Lighthouse report
         uses: actions/upload-artifact@v4
